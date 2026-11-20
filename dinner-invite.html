@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>7 Months</title>
+<style>
+  :root {
+    --bg: #f4f7fb;
+    --ink: #1f2a44;
+    --muted: #6b7794;
+    --line: #d5deec;
+    --accent: #e8798f;
+    --body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color-scheme: light;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 36px 18px 56px;
+  }
+  main { max-width: 480px; margin: 0 auto; }
+  .daisy { display: block; width: 64px; height: 64px; margin: 0 0 12px; }
+  h1 { font-size: 28px; line-height: 1.2; margin: 0 0 8px; font-weight: 700; }
+  p { margin: 0; }
+  .lede { color: var(--muted); margin-bottom: 28px; }
+  form { display: flex; flex-direction: column; gap: 18px; }
+  fieldset { border: 0; padding: 0; margin: 0; }
+  label, legend { display: block; font-weight: 600; margin-bottom: 6px; padding: 0; }
+  input[type="text"], textarea {
+    width: 100%;
+    font: inherit;
+    color: var(--ink);
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 11px 13px;
+  }
+  textarea { min-height: 80px; resize: vertical; }
+  input[type="text"]:focus, textarea:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chips input { position: absolute; opacity: 0; pointer-events: none; }
+  .chips label {
+    margin: 0;
+    font-weight: 500;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 9px 16px;
+    cursor: pointer;
+  }
+  .chips input:checked + label { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .chips input:focus-visible + label { outline: 2px solid var(--accent); outline-offset: 2px; }
+  button, a.btn {
+    font: inherit;
+    font-weight: 600;
+    border: 0;
+    border-radius: 10px;
+    padding: 12px 18px;
+    cursor: pointer;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+  }
+  button.alt { background: #e6edf7; color: var(--ink); }
+  button:focus-visible, a.btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  #reply { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--line); }
+  #reply[hidden] { display: none; }
+  #reply h2 { font-size: 20px; margin: 0 0 10px; }
+  pre#summary {
+    white-space: pre-wrap;
+    font-family: var(--body);
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 14px;
+    margin: 0 0 14px;
+  }
+  .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+  #status { color: var(--muted); font-size: 14px; margin-top: 10px; }
+</style>
+</head>
+<body>
+<main>
+  <svg class="daisy" viewBox="0 0 100 100" aria-hidden="true">
+    <g fill="#ffffff" stroke="#d5deec" stroke-width="2">
+      <ellipse cx="50" cy="20" rx="9" ry="17"/>
+      <ellipse cx="50" cy="20" rx="9" ry="17" transform="rotate(45 50 50)"/>
+      <ellipse cx="50" cy="20" rx="9" ry="17" transform="rotate(90 50 50)"/>
+      <ellipse cx="50" cy="20" rx="9" ry="17" transform="rotate(135 50 50)"/>
+      <ellipse cx="50" cy="20" rx="9" ry="17" transform="rotate(180 50 50)"/>
+      <ellipse cx="50" cy="20" rx="9" ry="17" transform="rotate(225 50 50)"/>
+      <ellipse cx="50" cy="20" rx="9" ry="17" transform="rotate(270 50 50)"/>
+      <ellipse cx="50" cy="20" rx="9" ry="17" transform="rotate(315 50 50)"/>
+    </g>
+    <circle cx="50" cy="50" r="12" fill="#f6c945"/>
+  </svg>
+  <h1>Happy 7 months, princess</h1>
+  <p class="lede">I've decided to begin the day with some mini golf, and after the Las Vegas GP, I'm going to cook for you. Pick whatever you want baby.</p>
+
+  <form id="rsvp" autocomplete="off">
+    <div>
+      <label for="entree">Starter</label>
+      <input type="text" id="entree" name="entree">
+    </div>
+    <div>
+      <label for="main">Main</label>
+      <input type="text" id="main" name="main">
+    </div>
+    <div>
+      <label for="dessert">Dessert</label>
+      <input type="text" id="dessert" name="dessert">
+    </div>
+
+    <fieldset>
+      <legend>Vibe</legend>
+      <div class="chips">
+        <input type="radio" name="vibe" id="v1" value="Cozy" checked><label for="v1">Cozy</label>
+        <input type="radio" name="vibe" id="v2" value="Fancy"><label for="v2">Fancy</label>
+        <input type="radio" name="vibe" id="v3" value="Pyjamas"><label for="v3">Pyjamas</label>      </div>
+    </fieldset>
+
+    <div>
+      <label for="music">Music</label>
+      <input type="text" id="music" name="music">
+    </div>
+    <div>
+      <label for="extra">Anything else</label>
+      <textarea id="extra" name="extra"></textarea>
+    </div>
+
+    <button type="submit">Send</button>
+  </form>
+
+  <section id="reply" hidden aria-live="polite">
+    <h2>Got it</h2>
+    <pre id="summary"></pre>
+    <div class="actions">
+      <a class="btn" id="sms" href="#">Send me a text baby</a>
+      <button type="button" class="alt" id="copy">Copy</button>
+      <button type="button" class="alt" id="edit">Edit</button>
+    </div>
+    <p id="status"></p>
+  </section>
+</main>
+
+<script>
+  // Put Joel's mobile number here (e.g. "+61400000000") so the text button opens straight to him.
+  var JOEL_NUMBER = "+61456966456";
+
+  var form = document.getElementById("rsvp");
+  var reply = document.getElementById("reply");
+  var summaryEl = document.getElementById("summary");
+  var smsLink = document.getElementById("sms");
+  var statusEl = document.getElementById("status");
+
+  function val(id, fallback) {
+    var v = document.getElementById(id).value.trim();
+    return v || fallback;
+  }
+
+  function buildSummary() {
+    var vibe = form.querySelector('input[name="vibe"]:checked').value;
+    var lines = [
+      "Starter: " + val("entree", "surprise me"),
+      "Main: " + val("main", "surprise me"),
+      "Dessert: " + val("dessert", "surprise me"),
+      "Vibe: " + vibe,
+      "Music: " + val("music", "surprise me")
+    ];
+    var extra = document.getElementById("extra").value.trim();
+    if (extra) lines.push("Also: " + extra);
+    return lines.join("\n");
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var text = buildSummary();
+    summaryEl.textContent = text;
+    smsLink.href = "sms:" + JOEL_NUMBER + "?&body=" + encodeURIComponent(text);
+    statusEl.textContent = "";
+    reply.hidden = false;
+    reply.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  document.getElementById("copy").addEventListener("click", function () {
+    var text = summaryEl.textContent;
+    function done(ok) {
+      statusEl.textContent = ok ? "Copied, paste it to me." : "Couldn't copy, screenshot this and send it to me.";
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });
+    } else {
+      done(false);
+    }
+  });
+
+  document.getElementById("edit").addEventListener("click", function () {
+    reply.hidden = true;
+    form.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+</script>
+</body>
+</html>
